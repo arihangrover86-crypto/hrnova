@@ -21,7 +21,7 @@ import FieldforceManagement from "@/pages/products/fieldforce-management";
 import ComplianceManagement from "@/pages/products/compliance-management";
 
 // Services
- import ServiceOffering from "@/pages/services/ServiceOffering";
+
 import VirtualHRTeam from "@/pages/services/VirtualHRTeam";
 import PolicyAuditDesign from "@/pages/services/PolicyAuditDesign";
 
@@ -65,7 +65,7 @@ function Router() {
       <Route path="/products/compliance-management" component={ComplianceManagement} />
 
       {/* Services */}
-      <Route path="/services/offering" component={ServiceOffering} />
+       {/*   <Route path="/services/offering" component={ServiceOffering} />*/}
       <Route path="/services/virtual-hr-team" component={VirtualHRTeam} />
       <Route path="/services/policy-audit-design" component={PolicyAuditDesign} />
 
@@ -110,3 +110,6 @@ function App() {
 }
 
 export default App;
+
+
+// import ServiceOffering from "@/pages/services/ServiceOffering";
