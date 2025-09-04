@@ -21,9 +21,9 @@ import FieldforceManagement from "@/pages/products/fieldforce-management";
 import ComplianceManagement from "@/pages/products/compliance-management";
 
 // Services
-import ServiceOffering from "@/pages/services/offering";
-import VirtualHRTeam from "@/pages/services/virtual-hr-team";
-import PolicyAuditDesign from "@/pages/services/policy-audit-design";
+ import ServiceOffering from "./pages/services/ServiceOffering";
+import VirtualHRTeam from "@/pages/services/VirtualHRTeam";
+import PolicyAuditDesign from "@/pages/services/PolicyAuditDesign";
 
 // Business Size
 import Startup from "@/pages/business-size/startup";
