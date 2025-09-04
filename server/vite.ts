@@ -27,7 +27,8 @@ export async function setupVite(app: Express, server: Server) {
   };
 
   const vite = await createViteServer({
-    configFile: false, // disables vite.config.ts
+    root: path.resolve(process.cwd(), "client"), // tell Vite where index.html is
+    configFile: false, // disable vite.config.ts
     customLogger: {
       ...viteLogger,
       error: (msg, options) => {
@@ -46,7 +47,7 @@ export async function setupVite(app: Express, server: Server) {
 
     try {
       const clientTemplate = path.resolve(
-        import.meta.dirname,
+        process.cwd(),
         "client",
         "index.html"
       );
@@ -69,7 +70,7 @@ export async function setupVite(app: Express, server: Server) {
 
 // Used in production (Render)
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(import.meta.dirname, "client", "dist");
+  const distPath = path.resolve(process.cwd(), "client", "dist");
 
   if (!fs.existsSync(distPath)) {
     throw new Error(
@@ -91,6 +92,9 @@ const PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === "production") {
   serveStatic(app);
+  app.listen(PORT, () => {
+    log(`Production server running at http://localhost:${PORT}`, "express");
+  });
 } else {
   const httpServer = app.listen(PORT, () => {
     log(`Dev server running at http://localhost:${PORT}`, "vite");
