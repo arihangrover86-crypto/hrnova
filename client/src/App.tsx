@@ -1,50 +1,51 @@
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "./components/ui/toaster";
+import { TooltipProvider } from "./components/ui/tooltip";
 import Footer from "./components/footer";
+
 // Pages
-import Home from "@/pages/home";
-import NotFound from "@/pages/not-found";
+import Home from "./pages/home";
+import NotFound from "./pages/not-found";
 
 // Products
-import CoreHR from "@/pages/products/core-hr";
-import PayrollCompliance from "@/pages/products/payroll-compliance";
-import PerformanceManagement from "@/pages/products/performance-management";
-import Timesheet from "@/pages/products/timesheet";
-import CloudPayMobile from "@/pages/products/cloudpay-mobile";
-import LeaveAttendance from "@/pages/products/leave-attendance";
-import ExpenseTravel from "@/pages/products/expense-travel";
-import FieldforceManagement from "@/pages/products/fieldforce-management";
-import ComplianceManagement from "@/pages/products/compliance-management";
+import CoreHR from "./pages/products/core-hr";
+import PayrollCompliance from "./pages/products/payroll-compliance";
+import PerformanceManagement from "./pages/products/performance-management";
+import Timesheet from "./pages/products/timesheet";
+import CloudPayMobile from "./pages/products/cloudpay-mobile";
+import LeaveAttendance from "./pages/products/leave-attendance";
+import ExpenseTravel from "./pages/products/expense-travel";
+import FieldforceManagement from "./pages/products/fieldforce-management";
+import ComplianceManagement from "./pages/products/compliance-management";
 
 // Services  
-import ServiceOffering from "@/pages/services/offering";
-import VirtualHRTeam from "@/pages/services/virtual-hr-team";
-import PolicyAuditDesign from "@/pages/services/policy-audit-design";
+import ServiceOffering from "./pages/services/offering";
+import VirtualHRTeam from "./pages/services/virtual-hr-team";
+import PolicyAuditDesign from "./pages/services/policy-audit-design";
 
 // Business Size
-import Startup from "@/pages/business-size/startup";
-import GrowingStartup from "@/pages/business-size/growing-startup";
-import SmallBusiness from "@/pages/business-size/small-business";
+import Startup from "./pages/business-size/startup";
+import GrowingStartup from "./pages/business-size/growing-startup";
+import SmallBusiness from "./pages/business-size/small-business";
 
 // Resources
-import HRToolkit from "@/pages/resources/toolkit";
-import Blogs from "@/pages/resources/blogs";
+import HRToolkit from "./pages/resources/toolkit";
+import Blogs from "./pages/resources/blogs";
 
 // About
-import AboutUs from "@/pages/about/about-us";
-import OurStory from "@/pages/about/our-story";
-import MediaCoverage from "@/pages/about/media-coverage";
-import CaseStudies from "@/pages/about/case-studies";
-import Careers from "@/pages/about/careers";
-import Support from "@/pages/about/support";
+import AboutUs from "./pages/about/about-us";
+import OurStory from "./pages/about/our-story";
+import MediaCoverage from "./pages/about/media-coverage";
+import CaseStudies from "./pages/about/case-studies";
+import Careers from "./pages/about/careers";
+import Support from "./pages/about/support";
 
 // Auth
-import RequestDemo from "@/pages/auth/request-demo";
-import Login from "@/pages/auth/login";
-import AdminLogin from "@/pages/auth/admin-login";
+import RequestDemo from "./pages/auth/request-demo";
+import Login from "./pages/auth/login";
+import AdminLogin from "./pages/auth/admin-login";
 
 function Router() {
   return (
