@@ -11,7 +11,7 @@ import NotFound from "@/pages/not-found";
 
 // Products
 import CoreHR from "@/pages/products/core-hr";
-import PayrollCompliance from "@/pages/products/payroll-compliance";
+// import PayrollCompliance from "@/pages/products/payroll-compliance";
 import PerformanceManagement from "@/pages/products/performance-management";
 import Timesheet from "@/pages/products/timesheet";
 import CloudPayMobile from "@/pages/products/cloudpay-mobile";
@@ -55,7 +55,7 @@ function Router() {
 
       {/* Products */}
       <Route path="/products/core-hr" component={CoreHR} />
-      <Route path="/products/payroll-compliance" component={PayrollCompliance} />
+    {/*  <Route path="/products/payroll-compliance" component={PayrollCompliance} />*/}
       <Route path="/products/performance-management" component={PerformanceManagement} />
       <Route path="/products/timesheet" component={Timesheet} />
       <Route path="/products/cloudpay-mobile" component={CloudPayMobile} />
