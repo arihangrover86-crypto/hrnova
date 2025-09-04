@@ -11,7 +11,7 @@ import NotFound from "@/pages/not-found";
 
 // Products
 import CoreHR from "@/pages/products/core-hr";
-// import PayrollCompliance from "@/pages/products/payroll-compliance";
+ 
 import PerformanceManagement from "@/pages/products/performance-management";
 import Timesheet from "@/pages/products/timesheet";
 import CloudPayMobile from "@/pages/products/cloudpay-mobile";
