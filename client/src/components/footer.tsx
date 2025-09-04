@@ -51,11 +51,11 @@ export default function Footer() {
             <h4 className="font-semibold text-card-foreground mb-6">Solutions</h4>
             <ul className="space-y-3">
               {[
-                { label: 'HRMS System', href: 'https://hrnova.in/product/hrms' },
-                { label: 'Payroll Management', href: 'https://hrnova.in/product/payroll' },
-                { label: 'Employee Tracking', href: 'https://hrnova.in/product/tracking' },
-                { label: 'Recruitment Platform', href: 'https://hrnova.in/product/recruiting' },
-                { label: 'HR Analytics', href: 'https://hrnova.in/product/analytics' }
+                { label: 'HRMS System', href: '/products/core-hr' },
+                { label: 'Payroll Management', href: '/products/payroll-compliance' },
+                { label: 'Employee Tracking', href: '/products/fieldforce-management' },
+                { label: 'Compliance Management', href: '/products/compliance-management' },
+                { label: 'Leave & Attendance', href: '/products/leave-attendance' }
               ].map((link) => (
                 <li key={link.label}>
                   <motion.a
@@ -138,7 +138,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className="text-muted-foreground">
-            © 2024 HRNOVA. All rights reserved. Empowering businesses with smart HR solutions.
+            © 2025 HRNOVA. All rights reserved. Empowering businesses with smart HR solutions.
           </p>
         </motion.div>
       </div>
