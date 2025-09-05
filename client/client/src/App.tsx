@@ -22,7 +22,7 @@
 
   // Services
   import ServiceOffering from "./pages/services/ServiceOffering";
-  import VirtualHRTeam from "@/pages/services/VirtualHRTeam";
+
   import PolicyAuditDesign from "@/pages/services/PolicyAuditDesign";
 
   // Business Size
@@ -46,7 +46,7 @@
   import RequestDemo from "@/pages/auth/request-demo";
   import Login from "@/pages/auth/login";
   import AdminLogin from "@/pages/auth/admin-login";
-
+  import VirtualHRTeam from "@/pages/services/VirtualHRTeam";
   function Router() {
     return (
       <Switch>
