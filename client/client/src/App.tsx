@@ -46,7 +46,7 @@
   import RequestDemo from "@/pages/auth/request-demo";
   import Login from "@/pages/auth/login";
   import AdminLogin from "@/pages/auth/admin-login";
- // import VirtualHRTeam from "@/pages/services/VirtualHRTeam";
+ 
   function Router() {
     return (
       <Switch>
@@ -90,7 +90,7 @@
         <Route path="/request-demo" component={RequestDemo} />
         <Route path="/login" component={Login} />
         <Route path="/admin-login" component={AdminLogin} />
-{/* <Route path="/services/virtual-hr-team" component={VirtualHRTeam} /> */}
+ 
         {/* 404 */}
         <Route component={NotFound} />
       </Switch>
