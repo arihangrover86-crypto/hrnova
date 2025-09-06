@@ -460,7 +460,7 @@ export default function Home() {
               icon="fas fa-users"
               iconColor="text-blue-600"
               iconBg="bg-blue-100"
-              link="https://hrnova.in/product/hrms"
+              link="/products/core-hr"
               delay={0}
             />
             
@@ -476,7 +476,7 @@ export default function Home() {
               icon="fas fa-money-bill-wave"
               iconColor="text-green-600"
               iconBg="bg-green-100"
-              link="https://hrnova.in/product/payroll"
+              link="/products/payroll-compliance"
               delay={0.1}
             />
 
@@ -492,7 +492,7 @@ export default function Home() {
               icon="fas fa-chart-bar"
               iconColor="text-purple-600"
               iconBg="bg-purple-100"
-              link="https://hrnova.in/product/tracking"
+              link="/products/fieldforce-management"
               delay={0.2}
             />
 
@@ -508,7 +508,7 @@ export default function Home() {
               icon="fas fa-user-plus"
               iconColor="text-orange-600"
               iconBg="bg-orange-100"
-              link="https://hrnova.in/product/recruiting"
+              link="/services/virtual-hr-team"
               delay={0.3}
             />
 
@@ -524,7 +524,7 @@ export default function Home() {
               icon="fas fa-chart-line"
               iconColor="text-red-600"
               iconBg="bg-red-100"
-              link="https://hrnova.in/product/analytics"
+              link="/resources/toolkit"
               delay={0.4}
             />
 
@@ -540,7 +540,7 @@ export default function Home() {
               icon="fas fa-trophy"
               iconColor="text-teal-600"
               iconBg="bg-teal-100"
-              link="https://hrnova.in/product/performance"
+              link="/products/performance-management"
               delay={0.5}
             />
           </div>
@@ -728,7 +728,7 @@ export default function Home() {
                 "Advanced reporting",
                 "API access"
               ]}
-              link="https://hrnova.in/plan/hrPolicy"
+              link="/#contact"
               delay={0}
             />
 
@@ -745,7 +745,7 @@ export default function Home() {
                 "Priority support", 
                 "API access"
               ]}
-              link="https://hrnova.in/plan/hrPayroll"
+              link="/#contact"
               delay={0.1}
             />
 
@@ -762,7 +762,7 @@ export default function Home() {
                 "Priority support",
                 "API access"
               ]}
-              link="https://hrnova.in/plan/hrVirtual"
+              link="/#contact"
               isPopular={true}
               delay={0.2}
             />
@@ -780,7 +780,7 @@ export default function Home() {
                 "Priority support",
                 "API access"
               ]}
-              link="https://hrnova.in/plan/hrRecruitment"
+            link="/#contact"
               delay={0.3}
             />
           </div>

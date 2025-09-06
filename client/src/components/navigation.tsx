@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-
+import hrnova from '../../../attached_assets/logohrnovasvg.svg';
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -78,9 +78,10 @@ export default function Navigation() {
             transition={{ duration: 0.2 }}
           >
             <Link href="/" className="flex-shrink-0">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent lowercase" data-testid="logo">
+              {/* <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent lowercase" data-testid="logo">
                 hrnova
-              </h1>
+              </h1> */}
+              <img src={hrnova} />
             </Link>
           </motion.div>
           
@@ -281,7 +282,9 @@ export default function Navigation() {
                 Request Demo
               </motion.button>
             </Link>
-            <Link href="/login">
+            {/* <Link href="/login"> */}
+            {/* <Link  href="https://app.hrnova.cloud/auth6/login.aspx?role=0" target="_blank">
+           
               <motion.button
                 className="text-gray-600 hover:text-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-gray-300"
                 whileHover={{ scale: 1.02 }}
@@ -289,8 +292,23 @@ export default function Navigation() {
               >
                 Login
               </motion.button>
-            </Link>
-            <Link href="/admin-login">
+            </Link> */}
+            <a
+  href="https://app.hrnova.cloud/auth6/login.aspx?role=1"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <motion.button
+    className="text-gray-600 hover:text-gray-800 px-4 py-2 rounded-lg text-sm font-medium transition-colors border border-gray-200 hover:border-gray-300"
+    whileHover={{ scale: 1.02 }}
+    data-testid="nav-user-login"
+  >
+    Login
+  </motion.button>
+</a>
+            {/* <Link href="/admin-login"> */}
+            <a href="https://app.hrnova.cloud/auth6/login.aspx?role=0" target="_blank">
+           
               <motion.button
                 className="text-blue-600 hover:text-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                 whileHover={{ scale: 1.02 }}
@@ -298,7 +316,7 @@ export default function Navigation() {
               >
                 Admin
               </motion.button>
-            </Link>
+            </a>
           </div>
           
           {/* Mobile Menu Button */}
@@ -315,7 +333,75 @@ export default function Navigation() {
         </div>
         
         {/* Mobile menu - Will be expanded later */}
-        <AnimatePresence>
+        {/* Mobile menu */}
+<AnimatePresence>
+  {isMobileMenuOpen && (
+    <motion.div
+      className="lg:hidden"
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="px-4 pt-4 textcapital pb-6 space-y-4 border-t border-gray-100 bg-gradient-to-r from-blue-50 to-purple-50 rounded-b-2xl shadow-md">
+        {Object.entries(menuItems).map(([key, items]) => (
+          <MobileAccordion
+            key={key}
+            title={key.replace(/([A-Z])/g, " $1")}
+            items={items}
+            onClose={() => setIsMobileMenuOpen(false)}
+          />
+        ))}
+
+        {/* Divider */}
+        <div className="border-t border-gray-200 pt-4" />
+
+        {/* Auth Buttons */}
+        <div className="flex flex-col space-y-3">
+          <Link href="/request-demo" onClick={() => setIsMobileMenuOpen(false)}>
+            <motion.button
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-lg text-sm font-medium shadow-md"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Request Demo
+            </motion.button>
+          </Link>
+
+          <a
+            href="https://app.hrnova.cloud/auth6/login.aspx?role=1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.button
+              className="w-full text-gray-600 border border-gray-200 hover:border-gray-300 px-6 py-2 rounded-lg text-sm font-medium"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Login
+            </motion.button>
+          </a>
+
+          <a
+            href="https://app.hrnova.cloud/auth6/login.aspx?role=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.button
+              className="w-full text-blue-600 border border-blue-200 hover:border-blue-400 px-6 py-2 rounded-lg text-sm font-medium"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Admin
+            </motion.button>
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+        {/* <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
               className="lg:hidden"
@@ -331,8 +417,59 @@ export default function Navigation() {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
     </motion.nav>
+  );
+}
+function MobileAccordion({
+  title,
+  items,
+  onClose,
+}: {
+  title: string;
+  items: { label: string; href: string }[];
+  onClose: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border border-gray-200 rounded-lg bg-white shadow-sm">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center px-4 py-2 text-left text-gray-700 font-medium"
+      >
+        {title}
+        <i
+          className={`fas fa-chevron-down transform transition-transform ${
+            open ? "rotate-180" : ""
+          }`}
+        ></i>
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="px-4 pb-2 space-y-2"
+          >
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={onClose}
+              >
+                <span className="block text-sm text-gray-600 hover:text-blue-600 py-1">
+                  {item.label}
+                </span>
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

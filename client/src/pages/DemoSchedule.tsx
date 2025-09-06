@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/navigation";
-
+import { useLocation } from "wouter";
 export default function AboutUs() {
+  const [, setLocation] = useLocation();
+  const goToContact = () => {
+    if (window.location.pathname === "/") {
+      const el = document.getElementById("contact");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      setLocation("/#contact");
+    }
+  };
   return (
     <div style={{paddingTop:'30px',marginTop:'50px'}}>
 <motion.div
@@ -14,22 +25,28 @@ export default function AboutUs() {
               Ready to Transform Your HR Operations?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/#contact">
               <motion.button
                 className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-medium shadow-lg"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-start-free-trial"
+                onClick={goToContact}
               >
                 Start Free Trial
               </motion.button>
+              </a>
+              <a href="/#contact">
               <motion.button
                 className="bg-white/80 backdrop-blur-lg hover:bg-white text-gray-800 px-8 py-4 rounded-xl text-lg font-medium border border-gray-200 shadow-lg"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-schedule-demo"
+                onClick={goToContact}
               >
                 Schedule Demo
               </motion.button>
+              </a>
             </div>
           </motion.div>
           </div>

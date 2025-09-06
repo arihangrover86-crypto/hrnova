@@ -236,3 +236,8 @@
 .scroll-to-top:hover {
   background: #1d4ed8;
 }
+
+.textcapital>div>button
+{
+  text-transform: capitalize;
+}
